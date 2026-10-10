@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reddit Advice Analyzer</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="mark">R</div>
+        <div>
+          <p class="kicker">Thread signal</p>
+          <h1>Analyzer settings</h1>
+        </div>
+      </header>
+
+      <form id="settings-form">
+        <label for="provider">Provider</label>
+        <div class="select-wrap">
+          <select id="provider" name="provider">
+            <option value="openai">OpenAI</option>
+            <option value="anthropic">Anthropic</option>
+            <option value="openrouter">OpenRouter</option>
+          </select>
+        </div>
+
+        <label id="api-key-label" for="api-key">API key</label>
+        <div class="key-field">
+          <input id="api-key" name="api-key" type="password" autocomplete="off" placeholder="API key" spellcheck="false">
+          <button id="toggle-key" type="button" aria-label="Show API key">Show</button>
+        </div>
+
+        <label for="model">Model</label>
+        <input id="model" name="model" type="text" spellcheck="false">
+        <p id="provider-hint" class="provider-hint"></p>
+
+        <section class="consent-card" aria-labelledby="consent-title">
+          <label class="consent-toggle" for="data-consent">
+            <input id="data-consent" name="data-consent" type="checkbox">
+            <span class="consent-control" aria-hidden="true"></span>
+            <span id="consent-title">Enable analysis</span>
+          </label>
+          <p>When enabled, Thread Signal reads the current Reddit post title, body, and up to 50 visible comments, then sends that text to <strong id="consent-provider">your selected provider</strong> for analysis.</p>
+          <p>The extension developer does not receive or store this content. API usage may incur charges.</p>
+          <a href="privacy-policy.html" target="_blank">Read the privacy policy</a>
+        </section>
+
+        <p class="warning"><strong>Bring your own key.</strong> Keys are saved only in this Chrome profile, but extension storage is not a secure vault. Use restricted, low-limit keys.</p>
+
+        <div class="actions">
+          <button id="clear" class="secondary" type="button">Clear key</button>
+          <button class="primary" type="submit">Save settings</button>
+        </div>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
