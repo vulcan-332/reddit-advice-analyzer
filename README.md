@@ -80,6 +80,6 @@ Displayed percentages use largest-remainder rounding, so they always sum to 100%
 
 ## Before an unlisted beta
 
-Chrome Web Store requires the privacy policy to have a public URL. In GitHub repository settings, open **Pages**, select **Deploy from a branch**, then publish the `docs` folder from the `main` branch. Enter the resulting HTTPS URL in the Developer Dashboard and replace the popup's packaged privacy-policy link with that URL before submitting.
+The public privacy policy is hosted through GitHub Pages at <https://vulcan-332.github.io/reddit-advice-analyzer/>. Enter this URL in the Chrome Web Store Developer Dashboard's privacy-policy field.
 
 The extension does not analyze or transmit Reddit content until the user actively enables analysis in the popup. API keys are restricted to trusted extension contexts, and raw Reddit text is not written to extension storage.

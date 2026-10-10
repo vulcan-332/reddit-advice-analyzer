@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Reddit Advice Analyzer",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Classifies consequential personal-advice posts and summarizes the dominant comment sentiment.",
   "permissions": ["storage"],
   "host_permissions": [
